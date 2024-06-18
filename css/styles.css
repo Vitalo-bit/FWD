@@ -92,6 +92,44 @@ p {
     transition: transform 0.5s;
     z-index: 1;
 }
+.meme-card {
+    position: relative;
+    height: 30%
+    min-width: 200px;
+    padding: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s;
+    z-index: 2;
+}
+.meme-card img {
+    width: auto;
+    height: 200px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    z-index: 2;
+    position: relative;
+    
+}
+.meme-description {
+    display: none;
+}
+.meme-card .fire {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 90%;
+    height: 90%;
+    background: url('img/fire.gif') center center no-repeat;
+    background-size: cover;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 0.5s;
+    pointer-events: none;
+}
 
 .skill-card.active {
     transform: scale(1.05);
@@ -108,6 +146,7 @@ p {
     background-color: rgba(255, 255, 255, 0.8);
     
 }
+
 
 .skill-description {
     display: none;
@@ -134,4 +173,23 @@ p {
 
 #overlay.active {
     display: block;
+}
+.comic-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.comic-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.comic-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
 }
