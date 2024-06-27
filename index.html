@@ -4,55 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My page</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700&display=swap" rel="stylesheet">
-
 </head>
 <body>
-
 <div class="container">
     <div class="container-header">
-    <div class="image-container">
-        <img src="img/avatar.png" alt="My photo">
-    </div>
-    <h1>Hi, my name is Niyaz!</h1>
+        <div class="image-container">
+            <img src="images/avatar.png" alt="My photo">
+        </div>
+        <h1>Hi, my name is Niyaz!</h1>
     </div>
     <div class="container-header" style="flex-direction: column;">
-    <h2>About</h2>
-    <p>This is my personal page. Here you can find my achievements, projects and contacts. Enjoy!</p>
-    <h2>My skills</h2>
+        <h2>About</h2>
+        <p>This is my personal page. Here you can find my achievements, projects and contacts. Enjoy!</p>
+        <h2>My skills</h2>
     </div>
     <div class="skills-container">
-            <div class="skill-card" data-skill="Pandas">
-                <img src="img/pnd.png" alt="Pandas">
-                <div class="skill-description">Pandas is a powerful data manipulation library in Python, widely used for data cleaning, transformation, and analysis. It provides data structures like DataFrame and Series for handling structured data efficiently.</div>
-            </div>
-            <div class="skill-card" data-skill="Sklearn">
-                <img src="img/sklearn.png" alt="Sklearn">
-                <div class="skill-description">Scikit-learn (sklearn) is a popular machine learning library in Python, offering a wide range of algorithms for classification, regression, clustering, and more. It is known for its simplicity and ease of integration with other Python libraries like Pandas and NumPy.</div>
-            </div>
-            <div class="meme-card" data-skill="meme">
-                <div class="fire"></div>
-                <img src="img/meme.png" alt="meme">
-                <div class="meme-description"><a href=comic.html></a></div>
-                
+        <div class="skill-card" data-skill="Pandas">
+            <img src="images/pnd.png" alt="Pandas">
+            <div class="skill-description">Pandas is a powerful data manipulation library in Python, widely used for data cleaning, transformation, and analysis. It provides data structures like DataFrame and Series for handling structured data efficiently.</div>
+        </div>
+        <div class="skill-card" data-skill="Sklearn">
+            <img src="images/sklearn.png" alt="Sklearn">
+            <div class="skill-description">Scikit-learn (sklearn) is a popular machine learning library in Python, offering a wide range of algorithms for classification, regression, clustering, and more. It is known for its simplicity and ease of integration with other Python libraries like Pandas and NumPy.</div>
+        </div>
+        <div class="meme-card" data-skill="meme">
+            <div class="fire"></div>
+            <img src="images/meme.png" alt="meme">
+            <div class="meme-description">
+                <a href="comic.html"></a>
             </div>
         </div>
+    </div>
 </div>
 <div id="overlay"></div>
 <footer class="footer-style">
     <div class="contacts-head">
         <h2>Contact me</h2>
     </div>
-    
     <div class="social-links">
-        <a id="gh-link" href="https://github.com/Vitalo-bit"><img src="img/github.png" alt="GitHub"></a>
-        <a id="tg-link" href="https://t.me/gotterkiller"><img src="img/telegram.png" alt="Telegram"></a>
-        <a id="email" href="mailto:nijaz.shaidullin@yandex.ru"><img src="img/yandex.png" alt="Email"></a>
+        <a id="gh-link" href="https://github.com/Vitalo-bit"><img src="images/github.png" alt="GitHub"></a>
+        <a id="tg-link" href="https://t.me/gotterkiller"><img src="images/telegram.png" alt="Telegram"></a>
+        <a id="email" href="mailto:nijaz.shaidullin@yandex.ru"><img src="images/yandex.png" alt="Email"></a>
     </div>
 </footer>
-
-<script src="js/scripts.js"></script>
-
+<script src="dist/bundle.js"></script>
 </body>
 </html>

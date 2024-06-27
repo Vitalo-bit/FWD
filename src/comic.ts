@@ -2,19 +2,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const overlay = document.getElementById('overlay');
 
     if (overlay) {
+        // Обработка кликов по .skill-card элементам
         document.querySelectorAll('.skill-card').forEach(card => {
             card.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const description = card.querySelector('.skill-description');
-                const isVisible = card.classList.contains('active');
+                e.stopPropagation(); // Остановка всплытия события
+                const description = card.querySelector('.skill-description') as HTMLElement; // Получение .skill-description элемента
 
+                // Удаление активных классов и скрытие описаний у всех .skill-card элементов
                 document.querySelectorAll('.skill-card').forEach(c => {
                     c.classList.remove('active');
-                    c.querySelector('.skill-description').style.display = 'none';
+                    (c.querySelector('.skill-description') as HTMLElement).style.display = 'none';
                 });
-                overlay.classList.remove('active');
+                overlay.classList.remove('active'); // Удаление класса активности с оверлея
 
-                if (!isVisible) {
+                // Добавление активного класса и отображение описания для текущего .skill-card элемента
+                if (!card.classList.contains('active')) {
                     card.classList.add('active');
                     description.style.display = 'block';
                     overlay.classList.add('active');
@@ -22,60 +24,34 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
+        // Закрытие всех .skill-card элементов при клике на overlay
         overlay.addEventListener('click', () => {
             document.querySelectorAll('.skill-card').forEach(card => {
                 card.classList.remove('active');
-                card.querySelector('.skill-description').style.display = 'none';
+                (card.querySelector('.skill-description') as HTMLElement).style.display = 'none';
             });
             overlay.classList.remove('active');
         });
 
+        // Закрытие всех .skill-card элементов при клике вне .skill-card элемента
         document.addEventListener('click', (e) => {
-            if (!e.target.closest('.skill-card')) {
+            const target = e.target as HTMLElement;
+            if (!target.closest('.skill-card')) {
                 document.querySelectorAll('.skill-card').forEach(card => {
                     card.classList.remove('active');
-                    card.querySelector('.skill-description').style.display = 'none';
+                    (card.querySelector('.skill-description') as HTMLElement).style.display = 'none';
                 });
                 overlay.classList.remove('active');
             }
         });
-        
-        
-        
-        
-        
-        
-        document.querySelectorAll('.meme-card').forEach(card => {
-            card.addEventListener('click', (e) => {
-                const link = card.querySelector('.meme-description a');
-                if (link) {
-                    window.location.href = link.href;
-                }
-            });
-
-            card.addEventListener('mouseover', () => {
-                card.style.transform = 'scale(1.05)';
-                const fire = card.querySelector('.fire');
-                if (fire) {
-                    fire.style.opacity = '1';
-                }
-            });
-
-            card.addEventListener('mouseout', () => {
-                card.style.transform = 'scale(1)';
-                const fire = card.querySelector('.fire');
-                if (fire) {
-                    fire.style.opacity = '0';
-                }
-            });
-        });
     }
 
-    if (document.getElementById('comic')) {
+    // Загрузка комикса
+    const comicContainer = document.getElementById('comic');
+    if (comicContainer) {
         const email = 'n.shaydullin@innopolis.university';
-        const comicContainer = document.getElementById('comic');
 
-        const createSafeElement = (tag, textContent) => {
+        const createSafeElement = (tag: string, textContent: string): HTMLElement => {
             const element = document.createElement(tag);
             element.textContent = textContent;
             return element;
